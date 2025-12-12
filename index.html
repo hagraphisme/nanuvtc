@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonathan Nanu - Chauffeur VTC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET ET BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
+        body { background-color: #262626; color: #ffffff; display: flex; justify-content: center; min-height: 100vh; }
+
+        /* --- CONTENEUR MOBILE --- */
+        .mobile-container { width: 100%; max-width: 480px; background-color: #262626; position: relative; display: flex; flex-direction: column; overflow-x: hidden; box-shadow: 0 0 30px rgba(0,0,0,0.5); }
+
+        /* --- HERO HEADER (PHOTO CHAUFFEUR) --- */
+        .hero-header {
+            width: 100%;
+            height: 45vh;
+            /* ICI : Le code cherche une image nommée 'chauffeur.jpg' */
+            background-image: url('chauffeur.jpg'); 
+            background-size: cover;
+            background-position: center top;
+            position: relative;
+        }
+        
+        .hero-header::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 60px; background: linear-gradient(to bottom, transparent, #262626); }
+
+        /* --- CARTE D'INFORMATIONS --- */
+        .info-card { background-color: #262626; border-radius: 30px 30px 0 0; margin-top: -40px; padding: 30px 24px 40px 24px; position: relative; z-index: 10; display: flex; flex-direction: column; gap: 15px; }
+
+        h1 { font-size: 28px; font-weight: 700; margin-bottom: 2px; letter-spacing: -0.5px; }
+        .subtitle { font-size: 14px; color: #d1d1d1; font-weight: 400; margin-bottom: 5px; }
+        .icon-svg { width: 20px; height: 20px; fill: #ffffff; flex-shrink: 0; }
+        .premium-badge { display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; margin-bottom: 10px; }
+        .vehicle-label { font-size: 13px; color: #aaa; margin-bottom: 8px; }
+
+        /* --- GALERIE VOITURES --- */
+        .gallery { display: flex; gap: 12px; margin-bottom: 20px; }
+        .gallery-img { width: 50%; aspect-ratio: 16/10; border-radius: 12px; background-size: cover; background-position: center; background-color: #333; }
+        
+        /* ICI : Le code cherche 'profil.jpg' et 'face.jpg' */
+        .car-1 { background-image: url('profil.jpg'); } 
+        .car-2 { background-image: url('face.jpg'); } 
+
+        /* --- LISTE D'INFOS --- */
+        .info-list { display: flex; flex-direction: column; gap: 20px; margin-bottom: 30px; }
+        .info-item { display: flex; align-items: center; gap: 15px; font-size: 14px; color: #fff; line-height: 1.4; }
+        .info-item.multi-line { align-items: flex-start; }
+        .info-item.multi-line .icon-svg { margin-top: 2px; }
+        .app-links { display: flex; gap: 10px; margin-top: 6px; }
+        .app-link { text-decoration: none; color: white; background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 500; }
+        .app-link:hover { background: rgba(255,255,255,0.2); }
+
+        /* --- BOUTON CTA --- */
+        .btn-contact { width: 100%; background-color: #D4B475; color: #1a1a1a; border: none; padding: 16px; border-radius: 50px; font-size: 18px; font-weight: 700; text-align: center; text-decoration: none; display: block; box-shadow: 0 4px 15px rgba(212, 180, 117, 0.3); }
+        .btn-contact:active { transform: scale(0.98); background-color: #c4a465; }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-container">
+        <div class="hero-header"></div>
+
+        <div class="info-card">
+            
+            <div>
+                <h1>Jonathan Nanu</h1>
+                <p class="subtitle">Votre chauffeur VTC</p>
+                
+                <div class="premium-badge">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.08 3.11H5.77L6.85 7zM19 17H5v-5h14v5z"/><circle cx="7.5" cy="14.5" r="1.5"/><circle cx="16.5" cy="14.5" r="1.5"/></svg>
+                    <span>Courses Premium</span>
+                </div>
+            </div>
+
+            <div>
+                <p class="vehicle-label">Véhicule : audi a6 2020</p>
+                <div class="gallery">
+                    <div class="gallery-img car-1"></div>
+                    <div class="gallery-img car-2"></div>
+                </div>
+            </div>
+
+            <div class="info-list">
+                
+                <div class="info-item multi-line">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M18.92 5.01C18.72 4.42 18.16 4 17.5 4h-11c-.66 0-1.21.42-1.42 1.01L3 11v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 15c-.83 0-1.5-.67-1.5-1.5S5.67 12 6.5 12s1.5.67 1.5 1.5S7.33 15 6.5 15zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 10l1.5-4.5h11L19 10H5z"/></svg>
+                    <div>
+                        <div style="margin-bottom:4px;">Présent sur Uber et Bolt</div>
+                        <div class="app-links">
+                            <a href="https://m.uber.com/ul" class="app-link">Uber</a>
+                            <a href="https://bolt.eu/dl" class="app-link">Bolt</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <span>1 Rue des plan poupre 95000, Cergy</span>
+                </div>
+
+                <div class="info-item">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <a href="tel:+33646936517" style="color:white; text-decoration:none;">06 46 93 65 17</a>
+                </div>
+
+                <div class="info-item">
+                    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <a href="mailto:nanudemafere@hotmail.com" style="color:white; text-decoration:none;">nanudemafere@hotmail.com</a>
+                </div>
+            </div>
+
+            <a href="tel:+33646936517" class="btn-contact">Contactez moi</a>
+
+        </div>
+    </div>
+
+</body>
+</html>
